@@ -1,6 +1,6 @@
 # Dolar ARG
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/58e78bfa-760e-4cd5-a542-5bd0558c2b17/deploy-status)](https://app.netlify.com/sites/dolar-hoy-arg/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/58e78bfa-760e-4cd5-a542-5bd0558c2b17/deploy-status)](https://app.netlify.com/sites/dolar-arg-app/deploys)
 
 # Astro Starter Kit: Minimal
 
