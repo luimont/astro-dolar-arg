@@ -1,0 +1,73 @@
+---
+
+import Navbar from "../components/Navbar.astro"
+import Header from "../components/Header.astro"
+import MainContainer from "../components/MainContainer.astro"
+import Background from "../components/Background.astro"
+import Footer from "../components/Footer.astro"
+import ThemeToggle from "../components/ThemeToggle.astro"
+
+// Función para realizar la petición GET a la API
+const fetchData1 = async () => {
+  try {
+    //const apiUrl = '';
+    const apiUrl = import.meta.env.API_URL
+    const response = await fetch(apiUrl);
+    if (response.ok) {
+      const data = await response.json();
+      console.log('Datos recibidos:', data);
+    } else {
+      console.error('Error al obtener los datos:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/app_logo.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Explora el valor actual del Dólar y todas sus cotizaciones en Argentina desde un mismo lugar" />
+		<title>DolarArg - Cotizaciones del Dólar Hoy en Argentina</title>
+	</head>
+	<body class="relative">
+    <Background />
+    <Navbar />
+    <Header />
+    <MainContainer />
+    <Footer />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+
+	body {
+		display: flex; 
+		flex-direction: column;
+		min-height: 100vh;
+		color: rgba(17, 17, 17, 0.9);
+    overscroll-behavior: none;
+	}
+	
+	html {		
+		/* font-family: "Onest Variable", system-ui, sans-serif; */
+		scroll-behavior: smooth; /* Esto es para animar el Scroll cuando da click en los item del menú */
+	}
+
+	@media (prefers-color-scheme: dark) {
+    body {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+	
+
+</style>
+

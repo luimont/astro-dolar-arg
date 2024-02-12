@@ -1,0 +1,57 @@
+---
+
+const { casa, compra, venta, fechaActualizacion } = Astro.props.value
+
+const getName = (name: string) => {  
+  const mappingNames = {
+    oficial: 'Dólar Oficial',
+    blue: 'Dólar Blue', 
+    bolsa: 'Dólar Bolsa (MEP)', 
+    contadoconliqui: 'Dólar CCL', 
+    mayorista: 'Dólar Mayorista', 
+    cripto: 'Dólar Cripto', 
+    tarjeta: 'Dólar Tarjeta'
+  }
+  return mappingNames[name] || 'Default'
+}
+
+console.log(Astro.props.value)
+---
+
+<article class={`
+    transition
+    hover:scale-105
+    
+  `}  
+>
+<!--   
+  <div class="bg-blue-200">
+    <h1>ITEM</h1>
+  </div> 
+-->
+  <div class={`
+      max-w-xs p-6 rounded-lg shadow 
+      bg-teal-100/25 border border-gray-200 hover:bg-teal-100/50
+      dark:bg-teal-800/40 dark:border-gray-700 dark:hover:bg-teal-500/50
+    `}
+  >
+    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-teal-700 dark:text-teal-300/90">{getName(casa)}</h5>
+    <div class="flex justify-between gap-8 ">
+      <div class="">
+        <p class="font-extralight text-gray-700 dark:text-gray-400">Compra</p>
+        <p class="text-2xl font-sans text-gray-700 dark:text-gray-200">${compra}</p>
+      </div>
+      <div class="text-right">
+        <p class="font-extralight text-gray-700 dark:text-gray-400">Venta</p>
+        <p class="text-2xl font-sans text-gray-700 dark:text-gray-200">${venta}</p>
+      </div>
+    </div>
+    
+<!--     <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Read more
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+    </a> -->
+  </div>
+</article>
