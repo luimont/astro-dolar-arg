@@ -2,7 +2,7 @@
 
 import Navbar from "../components/Navbar.astro"
 import Header from "../components/Header.astro"
-import MainContainer from "../components/MainContainer.astro"
+import {MainContainer} from "../components/MainContainer.jsx"
 import Background from "../components/Background.astro"
 import Footer from "../components/Footer.astro"
 import ThemeToggle from "../components/ThemeToggle.astro"
@@ -39,7 +39,7 @@ const fetchData1 = async () => {
     <Background />
     <Navbar />
     <Header />
-    <MainContainer />
+    <MainContainer client:load />
     <Footer />
 	</body>
 </html>
